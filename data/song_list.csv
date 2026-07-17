@@ -1,1 +1,51 @@
-song
+song_id,comparison_group,group_type,market_scope,year_end_rank,song_title,artist,chart_name,chart_year,tracking_period,source_url
+1,Rap,Genre,United States,1,Luther,Kendrick Lamar & SZA,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+2,Rap,Genre,United States,2,TV Off,Kendrick Lamar featuring Lefty Gunplay,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+3,Rap,Genre,United States,3,Not Like Us,Kendrick Lamar,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+4,Rap,Genre,United States,4,Squabble Up,Kendrick Lamar,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+5,Rap,Genre,United States,5,Nokia,Drake,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+6,Rap,Genre,United States,6,All the Way,BigXthaPlug featuring Bailey Zimmerman,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+7,Rap,Genre,United States,7,Sticky,"Tyler, the Creator featuring GloRilla, Sexyy Red & Lil Wayne",Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+8,Rap,Genre,United States,8,Whatchu Kno About Me,GloRilla & Sexyy Red,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+9,Rap,Genre,United States,9,Peekaboo,Kendrick Lamar featuring AzChike,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+10,Rap,Genre,United States,10,Denial Is a River,Doechii,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/
+11,R&B,Genre,United States,1,Timeless,The Weeknd & Playboi Carti,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+12,R&B,Genre,United States,2,Mutt,Leon Thomas,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+13,R&B,Genre,United States,3,30 for 30,SZA with Kendrick Lamar,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+14,R&B,Genre,United States,4,Cry for Me,The Weeknd,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+15,R&B,Genre,United States,5,Burning Blue,Mariah the Scientist,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+16,R&B,Genre,United States,6,Somebody Loves Me,"PARTYNEXTDOOR, Drake & Cash Cobain",Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+17,R&B,Genre,United States,7,Like Him,"Tyler, the Creator featuring Lola Young",Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+18,R&B,Genre,United States,8,Heart of a Woman,Summer Walker,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+19,R&B,Genre,United States,9,Residuals,Chris Brown,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+20,R&B,Genre,United States,10,Folded,Kehlani,Billboard Hot R&B Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-r-and-b-songs/
+21,Country,Genre,United States,1,A Bar Song (Tipsy),Shaboozey,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+22,Country,Genre,United States,2,Love Somebody,Morgan Wallen,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+23,Country,Genre,United States,3,I'm the Problem,Morgan Wallen,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+24,Country,Genre,United States,4,I Had Some Help,Post Malone featuring Morgan Wallen,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+25,Country,Genre,United States,5,Just in Case,Morgan Wallen,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+26,Country,Genre,United States,6,Good News,Shaboozey,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+27,Country,Genre,United States,7,What I Want,Morgan Wallen featuring Tate McRae,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+28,Country,Genre,United States,8,All the Way,BigXthaPlug featuring Bailey Zimmerman,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+29,Country,Genre,United States,9,I Got Better,Morgan Wallen,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+30,Country,Genre,United States,10,I Never Lie,Zach Top,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/
+31,Rock & Alternative,Genre,United States,1,Birds of a Feather,Billie Eilish,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+32,Rock & Alternative,Genre,United States,2,Too Sweet,Hozier,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+33,Rock & Alternative,Genre,United States,3,Stargazing,Myles Smith,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+34,Rock & Alternative,Genre,United States,4,Wildflower,Billie Eilish,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+35,Rock & Alternative,Genre,United States,5,Messy,Lola Young,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+36,Rock & Alternative,Genre,United States,6,No One Noticed,The Marías,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+37,Rock & Alternative,Genre,United States,7,Sailor Song,Gigi Perez,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+38,Rock & Alternative,Genre,United States,8,Liar,Jelly Roll,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+39,Rock & Alternative,Genre,United States,9,Undressed,sombr,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+40,Rock & Alternative,Genre,United States,10,Back to Friends,sombr,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/
+41,Global 200,Global benchmark,Global,1,APT.,ROSÉ & Bruno Mars,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+42,Global 200,Global benchmark,Global,2,Die with a Smile,Lady Gaga & Bruno Mars,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+43,Global 200,Global benchmark,Global,3,Birds of a Feather,Billie Eilish,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+44,Global 200,Global benchmark,Global,4,Ordinary,Alex Warren,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+45,Global 200,Global benchmark,Global,5,Beautiful Things,Benson Boone,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+46,Global 200,Global benchmark,Global,6,Lose Control,Teddy Swims,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+47,Global 200,Global benchmark,Global,7,That's So True,Gracie Abrams,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+48,Global 200,Global benchmark,Global,8,Luther,Kendrick Lamar & SZA,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+49,Global 200,Global benchmark,Global,9,Espresso,Sabrina Carpenter,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/
+50,Global 200,Global benchmark,Global,10,Golden,"HUNTR/X: EJAE, Audrey Nuna & REI AMI",Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/

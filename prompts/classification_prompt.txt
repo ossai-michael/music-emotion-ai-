@@ -1,1 +1,218 @@
+You are helping classify commercially successful songs for a portfolio data project.
 
+Project title:
+Heartbroken, Hopeful, or Happy? An AI-Assisted Analysis of Themes in 2025’s Highest-Performing Songs
+
+Research question:
+What themes, emotions, and value signals appear most often among 2025’s highest-performing songs across selected Billboard year-end charts?
+
+Important context:
+- The dataset contains songs from selected Billboard 2025 year-end charts.
+- Some songs may appear on more than one chart.
+- Classify each unique song once.
+- Use chart appearances only as context, not as the basis for the classification.
+- Do not reproduce, quote, or output copyrighted lyrics.
+- You may use publicly available song knowledge, lyric-level understanding, song descriptions, artist context, reviews, annotations, interviews, and widely known interpretations.
+- Do not store, reproduce, or return full lyrics.
+- If lyric-level evidence is available, use it to inform the classification without quoting lyrics.
+- If the song is ambiguous, information is limited, or the classification requires guesswork, mark human_review_needed as Yes.
+- Do not overclaim psychological impact on listeners.
+- Do not assume a sad song is harmful.
+- Do not assume an upbeat song is positive or constructive.
+- Classify the song’s apparent message and emotional narrative, not just its sonic mood.
+- Choose only from the allowed category values below.
+- Return CSV format only.
+- Preserve the input unique_song_id, song_title, and artist exactly.
+
+Input columns:
+unique_song_id,song_key,song_title,artist,chart_appearances
+
+Output columns:
+unique_song_id,song_title,artist,primary_theme,secondary_theme,primary_emotion,emotional_valence,agency,relationship_focus,message_orientation,message_score,value_signal,evidence_basis,confidence_score,human_review_needed,rationale
+
+Allowed values for primary_theme and secondary_theme:
+- Romantic Love & Devotion
+- Heartbreak & Loss
+- Desire & Intimacy
+- Celebration & Pleasure
+- Status/Wealth/Success
+- Confidence/Boldness/Pride
+- Identity & Self-Discovery
+- Conflict/Revenge/Defiance
+- Pain/Numbness/Escapism
+- Hope/Healing/Resilience
+- Social Struggle/Survival
+- Other
+
+Theme definitions:
+- Romantic Love & Devotion: Love, commitment, admiration, loyalty, or emotional attachment.
+- Heartbreak & Loss: Breakups, grief, missing someone, rejection, or emotional pain.
+- Desire & Intimacy: Attraction, lust, seduction, sexual desire, or romantic pursuit.
+- Celebration & Pleasure: Partying, dancing, fun, leisure, enjoying the moment, or carefree enjoyment.
+- Status/Wealth/Success: Money, fame, luxury, power, achievement, popularity, or social rank.
+- Confidence/Boldness/Pride: Self-assurance, swagger, dominance, courage, self-belief, or bold self-expression.
+- Identity & Self-Discovery: Confusion, insecurity, personal transformation, identity crisis, self-questioning, or figuring oneself out.
+- Conflict/Revenge/Defiance: Retaliation, enemies, betrayal, resentment, confrontation, rebellion, or fighting back.
+- Pain/Numbness/Escapism: Emotional shutdown, intoxication, avoidance, despair, detachment, or running from pain.
+- Hope/Healing/Resilience: Recovery, perseverance, optimism, faith in improvement, growth, or becoming better.
+- Social Struggle/Survival: Poverty, injustice, hardship, pressure, survival, community struggle, or systemic difficulty.
+- Other: Use only when none of the categories fit.
+
+Allowed values for primary_emotion:
+- Joy
+- Sadness
+- Longing
+- Anger
+- Confidence
+- Hope
+- Anxiety
+- Desire
+- Numbness
+- Mixed
+
+emotional_valence:
+- -2 = strongly negative emotional tone
+- -1 = somewhat negative emotional tone
+- 0 = mixed or neutral emotional tone
+- 1 = somewhat positive emotional tone
+- 2 = strongly positive emotional tone
+
+agency:
+- Low
+- Mixed
+- High
+
+Agency definitions:
+- Low: The narrator seems trapped, powerless, passive, overwhelmed, or controlled by circumstances.
+- Mixed: The narrator shows both struggle and some control, movement, or self-awareness.
+- High: The narrator seems decisive, empowered, assertive, resilient, or in control.
+
+relationship_focus:
+- No Romantic/Intimate Focus
+- New Love
+- Stable Love
+- Desire
+- Conflict
+- Separation
+- Missing Someone
+
+Relationship focus definitions:
+- This field refers only to romantic, sexual, or intimate relationship dynamics.
+- Use No Romantic/Intimate Focus when the song is not mainly about a romantic, sexual, or intimate relationship.
+- Do not use Conflict for artist rivalries, street conflict, social conflict, or general confrontation. Use No Romantic/Intimate Focus for those cases.
+- Stable Love: Committed love, devotion, loyalty, or long-term affection.
+- Desire: Romantic or sexual pursuit, attraction, lust, or seduction.
+- Conflict: Conflict within a romantic or intimate relationship.
+- Separation: Breakup, distance, divorce, or relationship ending.
+- Missing Someone: Longing for a romantic or intimate partner who is absent.
+
+message_orientation:
+- Constructive/Encouraging
+- Ambiguous/Mixed
+- Pleasure/Escapist
+- Potentially Concerning
+- Critical/Reflective
+
+Message orientation definitions:
+- Constructive/Encouraging: The song emphasizes hope, healing, love, growth, resilience, responsibility, healthy confidence, or a clearly uplifting message.
+- Ambiguous/Mixed: The song contains both constructive and concerning elements, or its message depends heavily on interpretation.
+- Pleasure/Escapist: The song centers enjoyment, desire, partying, luxury, or escape without a clearly constructive or destructive message.
+- Potentially Concerning: The song centers or normalizes revenge, despair, toxic relationships, excess, emotional numbness, objectification, destructive coping, or harmful pride.
+- Critical/Reflective: The song describes pain, destructive behavior, injustice, or negative patterns in a self-aware, observational, critical, or cautionary way rather than clearly endorsing them.
+
+message_score:
+- -2 = strongly concerning message
+- -1 = somewhat concerning, escapist, self-focused, or pleasure-centered message
+- 0 = ambiguous, mixed, descriptive, critical, reflective, or neutral message
+- 1 = somewhat constructive or encouraging message
+- 2 = strongly constructive or encouraging message
+
+Message score alignment rules:
+- Constructive/Encouraging should usually be 1 or 2.
+- Ambiguous/Mixed should usually be 0.
+- Pleasure/Escapist should usually be -1 or 0.
+- Potentially Concerning should usually be -1 or -2.
+- Critical/Reflective should usually be 0 or 1.
+- If you deviate from these defaults, the rationale should make the reason clear.
+
+Important distinction:
+- emotional_valence measures mood.
+- message_score measures the apparent value orientation or constructive/concerning nature of the message.
+- A song can be emotionally negative but constructively reflective.
+- A song can be emotionally positive but still carry a potentially concerning message.
+
+
+value_signal definion: Is measuring the main value, behavior, or worldview the song appears to normalize, celebrate, wrestle with, or point toward.
+value_signal:
+- Love/Commitment
+- Hope/Resilience
+- Self-Worth
+- Growth/Accountability
+- Joy/Celebration
+- Freedom/Escape
+- Status/Materialism
+- Desire/Pleasure
+- Revenge/Conflict
+- Numbness/Avoidance
+- Confusion/Instability
+- Survival/Struggle
+- Other
+
+evidence_basis:
+- Lyrics
+- Lyrics + Context
+- Context Only
+- Limited Evidence
+
+Evidence basis definitions:
+- Lyrics: Classification is mainly based on the song’s lyrical content or lyric-level understanding.
+- Lyrics + Context: Classification is based on both lyrical content and public context such as artist commentary, reviews, annotations, or common interpretation.
+- Context Only: Classification is based mainly on public descriptions, reviews, artist context, or widely known interpretation rather than direct lyric-level analysis.
+- Limited Evidence: Public information is limited, unclear, or conflicting, so the classification is uncertain.
+
+confidence_score:
+- 1 = very uncertain
+- 2 = uncertain
+- 3 = moderately confident
+- 4 = confident
+- 5 = very confident
+
+human_review_needed:
+- Yes
+- No
+
+Human review rules:
+- Use Yes if confidence_score is 1, 2, or 3.
+- Use Yes if evidence_basis is Limited Evidence.
+- Use Yes if evidence_basis is Context Only and the song meaning is ambiguous.
+- Use Yes if the song uses irony, metaphor, rivalry, slang, or unclear narrative perspective in a way that affects classification.
+- Use No only when the classification is reasonably clear.
+
+Rationale rules:
+- One sentence only.
+- Do not quote lyrics.
+- Do not reproduce copyrighted lyric text.
+- Explain the classification briefly.
+- Keep the rationale under 30 words.
+- Avoid commas in the rationale where possible to reduce CSV formatting issues.
+
+File output instructions:
+- Create the classified output as a downloadable CSV file when possible.
+- Name the file using this convention:
+  classified_batch_XX.csv
+- Replace XX with the two-digit batch number from the input filename.
+- Example:
+  If the input file is classification_batch_01.csv, name the output file classified_batch_01.csv.
+  If the input file is classification_batch_07.csv, name the output file classified_batch_07.csv.
+- If you cannot create a downloadable file, return CSV text only so it can be copied into a file manually.
+
+CSV formatting rules:
+- Return only the CSV file or CSV content.
+- Do not include markdown fences.
+- Do not include commentary before or after the CSV.
+- Do not include review notes.
+- Do not quote or reproduce copyrighted lyrics.
+- Wrap any field containing a comma in double quotes.
+- Do not add extra columns.
+- Do not leave blank fields.
+- Preserve the input unique_song_id, song_title, and artist exactly.
