@@ -4,16 +4,16 @@ Project title:
 Heartbroken, Hopeful, or Happy? An AI-Assisted Analysis of Themes in 2025’s Highest-Performing Songs
 
 Research question:
-What themes, emotions, and value signals appear most often among 2025’s highest-performing songs across selected Billboard year-end charts?
+What themes, emotions, message orientations, and value signals appear most often among 2025’s highest-performing songs across selected Billboard year-end charts?
 
 Important context:
 - The dataset contains songs from selected Billboard 2025 year-end charts.
 - Some songs may appear on more than one chart.
 - Classify each unique song once.
-- Use chart appearances only as context, not as the basis for the classification.
+- Use chart appearances only as context, not as the basis for classification.
 - Do not reproduce, quote, or output copyrighted lyrics.
-- You may use publicly available song knowledge, lyric-level understanding, song descriptions, artist context, reviews, annotations, interviews, and widely known interpretations.
-- Do not store, reproduce, or return full lyrics.
+- You may use song-level understanding, public song knowledge, lyric-level understanding, artist context, reviews, annotations, interviews, and widely known interpretations.
+- Do not store, reproduce, quote, or return full lyrics.
 - If lyric-level evidence is available, use it to inform the classification without quoting lyrics.
 - If the song is ambiguous, information is limited, or the classification requires guesswork, mark human_review_needed as Yes.
 - Do not overclaim psychological impact on listeners.
@@ -24,39 +24,77 @@ Important context:
 - Return CSV format only.
 - Preserve the input unique_song_id, song_title, and artist exactly.
 
+Core classification principles:
+- Self-awareness is not the same as growth.
+- Confession is not the same as accountability.
+- Therapy framing is not the same as healing.
+- Sadness is not the same as resilience.
+- Flexing success is not the same as self-worth.
+- Ego is not the same as grounded confidence.
+- Wealth/status is not the same as self-worth.
+- Describing dysfunction is not the same as criticizing it.
+- A song can be clever, funny, successful, vulnerable, or self-aware while still signaling instability, avoidance, revenge, materialism, ego, or emotional chaos.
+- A song can be emotionally negative but constructively reflective.
+- A song can be emotionally positive but still carry an escapist or concerning message.
+
 Input columns:
 unique_song_id,song_key,song_title,artist,chart_appearances
 
 Output columns:
 unique_song_id,song_title,artist,primary_theme,secondary_theme,primary_emotion,emotional_valence,agency,relationship_focus,message_orientation,message_score,value_signal,evidence_basis,confidence_score,human_review_needed,rationale
 
-Allowed values for primary_theme and secondary_theme:
-- Romantic Love & Devotion
-- Heartbreak & Loss
-- Desire & Intimacy
-- Celebration & Pleasure
-- Status/Wealth/Success
-- Confidence/Boldness/Pride
-- Identity & Self-Discovery
-- Conflict/Revenge/Defiance
-- Pain/Numbness/Escapism
-- Hope/Healing/Resilience
-- Social Struggle/Survival
+Allowed values for primary_theme:
+- Love & Attachment
+- Heartbreak & Longing
+- Sex & Desire
+- Celebration & Escape
+- Status & Success
+- Confidence & Power
+- Conflict & Revenge
+- Pain & Avoidance
+- Identity Crisis
+- Healing & Resilience
+- Survival & Struggle
 - Other
 
+Allowed values for secondary_theme:
+- Love & Attachment
+- Heartbreak & Longing
+- Sex & Desire
+- Celebration & Escape
+- Status & Success
+- Confidence & Power
+- Conflict & Revenge
+- Pain & Avoidance
+- Identity Crisis
+- Healing & Resilience
+- Survival & Struggle
+- Other
+- No Secondary Theme
+
 Theme definitions:
-- Romantic Love & Devotion: Love, commitment, admiration, loyalty, or emotional attachment.
-- Heartbreak & Loss: Breakups, grief, missing someone, rejection, or emotional pain.
-- Desire & Intimacy: Attraction, lust, seduction, sexual desire, or romantic pursuit.
-- Celebration & Pleasure: Partying, dancing, fun, leisure, enjoying the moment, or carefree enjoyment.
-- Status/Wealth/Success: Money, fame, luxury, power, achievement, popularity, or social rank.
-- Confidence/Boldness/Pride: Self-assurance, swagger, dominance, courage, self-belief, or bold self-expression.
-- Identity & Self-Discovery: Confusion, insecurity, personal transformation, identity crisis, self-questioning, or figuring oneself out.
-- Conflict/Revenge/Defiance: Retaliation, enemies, betrayal, resentment, confrontation, rebellion, or fighting back.
-- Pain/Numbness/Escapism: Emotional shutdown, intoxication, avoidance, despair, detachment, or running from pain.
-- Hope/Healing/Resilience: Recovery, perseverance, optimism, faith in improvement, growth, or becoming better.
-- Social Struggle/Survival: Poverty, injustice, hardship, pressure, survival, community struggle, or systemic difficulty.
+- Love & Attachment: Love, devotion, loyalty, emotional attachment, romantic commitment, or longing for secure connection.
+- Heartbreak & Longing: Breakups, romantic grief, rejection, missing someone, loss, or unresolved longing.
+- Sex & Desire: Sexual desire, lust, attraction, seduction, sexual pursuit, or intimate physical longing.
+- Celebration & Escape: Partying, dancing, fun, leisure, carefree enjoyment, release, or pleasure as escape.
+- Status & Success: Money, fame, luxury, achievement, popularity, image, career success, or social rank.
+- Confidence & Power: Swagger, dominance, boldness, self-assertion, superiority, ego, or being in control.
+- Conflict & Revenge: Diss tracks, retaliation, enemies, betrayal, confrontation, resentment, rebellion, or fighting back.
+- Pain & Avoidance: Emotional shutdown, denial, numbness, despair, detachment, intoxication-as-coping, or refusing to face pain.
+- Identity Crisis: Confusion, fractured selfhood, insecurity, instability, self-questioning, contradiction, or inner conflict.
+- Healing & Resilience: Actual recovery, perseverance, hope, repair, growth, becoming better, or moving through pain constructively.
+- Survival & Struggle: Hardship, poverty, systemic pressure, injustice, community struggle, endurance, or survival under difficult conditions.
 - Other: Use only when none of the categories fit.
+
+Theme selection rules:
+- Choose the dominant narrative as primary_theme.
+- Choose a secondary_theme only if it adds a clearly meaningful second dimension.
+- Use No Secondary Theme if the secondary theme is weak, speculative, or redundant.
+- Do not choose Healing & Resilience unless the song clearly moves toward recovery, perseverance, repair, hope, or constructive endurance.
+- Do not choose Identity Crisis for ordinary sadness or heartbreak unless the song is specifically about confusion, fractured identity, contradiction, or inner instability.
+- Do not choose Confidence & Power when the song is mainly about material achievement; use Status & Success.
+- Do not choose Status & Success when the song is mainly about ego, dominance, swagger, or superiority; use Confidence & Power.
+- Do not choose Love & Attachment for obsession, clinging, toxicity, or inability to move on unless genuine love/attachment is the dominant point.
 
 Allowed values for primary_emotion:
 - Joy
@@ -64,11 +102,24 @@ Allowed values for primary_emotion:
 - Longing
 - Anger
 - Confidence
-- Hope
 - Anxiety
 - Desire
 - Numbness
+- Hope
 - Mixed
+
+Emotion rules:
+- Joy: happiness, celebration, delight, lightness.
+- Sadness: grief, sorrow, regret, emotional pain.
+- Longing: yearning, missing someone, unresolved desire for connection.
+- Anger: resentment, rage, bitterness, hostility.
+- Confidence: swagger, self-assurance, dominance, pride.
+- Anxiety: fear, pressure, unease, nervousness, instability.
+- Desire: lust, attraction, sexual/romantic craving.
+- Numbness: emotional shutdown, detachment, emptiness, denial.
+- Hope: optimism, faith in improvement, expectation of healing.
+- Mixed: multiple emotions are equally central or the emotional tone is contradictory.
+- Anxiety does not replace Identity Crisis. Anxiety is a felt emotion; Identity Crisis is a theme about selfhood, confusion, or inner contradiction.
 
 emotional_valence:
 - -2 = strongly negative emotional tone
@@ -77,7 +128,14 @@ emotional_valence:
 - 1 = somewhat positive emotional tone
 - 2 = strongly positive emotional tone
 
-agency:
+Valence rules:
+- Judge the emotional world of the song, not just the beat.
+- Upbeat production does not automatically mean positive valence.
+- Humor, swagger, catchiness, or commercial success can coexist with negative valence.
+- A chaotic or self-destructive song can have high energy but negative valence.
+- A sad song can have negative valence even if it is thoughtful or well-written.
+
+Allowed values for agency:
 - Low
 - Mixed
 - High
@@ -85,9 +143,14 @@ agency:
 Agency definitions:
 - Low: The narrator seems trapped, powerless, passive, overwhelmed, or controlled by circumstances.
 - Mixed: The narrator shows both struggle and some control, movement, or self-awareness.
-- High: The narrator seems decisive, empowered, assertive, resilient, or in control.
+- High: The narrator seems decisive, empowered, assertive, forceful, resilient, dominant, or in control.
 
-relationship_focus:
+Agency rules:
+- Destructive confidence can still be High agency.
+- Emotional chaos with some self-awareness is usually Mixed agency.
+- Being sad does not automatically mean Low agency.
+
+Allowed values for relationship_focus:
 - No Romantic/Intimate Focus
 - New Love
 - Stable Love
@@ -99,66 +162,106 @@ relationship_focus:
 Relationship focus definitions:
 - This field refers only to romantic, sexual, or intimate relationship dynamics.
 - Use No Romantic/Intimate Focus when the song is not mainly about a romantic, sexual, or intimate relationship.
-- Do not use Conflict for artist rivalries, street conflict, social conflict, or general confrontation. Use No Romantic/Intimate Focus for those cases.
+- New Love: Early-stage romance or romantic discovery.
 - Stable Love: Committed love, devotion, loyalty, or long-term affection.
 - Desire: Romantic or sexual pursuit, attraction, lust, or seduction.
 - Conflict: Conflict within a romantic or intimate relationship.
 - Separation: Breakup, distance, divorce, or relationship ending.
 - Missing Someone: Longing for a romantic or intimate partner who is absent.
 
-message_orientation:
-- Constructive/Encouraging
-- Ambiguous/Mixed
-- Pleasure/Escapist
-- Potentially Concerning
-- Critical/Reflective
+Relationship focus rules:
+- Do not use Conflict for artist rivalries, street conflict, social conflict, industry conflict, ego battles, or general confrontation. Use No Romantic/Intimate Focus for those cases.
+- Do not use Stable Love for obsession, clinging, unresolved attachment, or inability to move on.
+- If the song is sexual but not emotionally relational, use Desire.
+
+Allowed values for message_orientation:
+- Encouraging
+- Reflective
+- Mixed
+- Escapist
+- Concerning
 
 Message orientation definitions:
-- Constructive/Encouraging: The song emphasizes hope, healing, love, growth, resilience, responsibility, healthy confidence, or a clearly uplifting message.
-- Ambiguous/Mixed: The song contains both constructive and concerning elements, or its message depends heavily on interpretation.
-- Pleasure/Escapist: The song centers enjoyment, desire, partying, luxury, or escape without a clearly constructive or destructive message.
-- Potentially Concerning: The song centers or normalizes revenge, despair, toxic relationships, excess, emotional numbness, objectification, destructive coping, or harmful pride.
-- Critical/Reflective: The song describes pain, destructive behavior, injustice, or negative patterns in a self-aware, observational, critical, or cautionary way rather than clearly endorsing them.
+- Encouraging: The song clearly points toward healthy love, hope, repair, maturity, responsibility, growth, perseverance, or constructive resilience.
+- Reflective: The song describes pain, dysfunction, contradiction, injustice, or chaos with self-awareness, critique, satire, observation, or caution. Reflective does not mean positive.
+- Mixed: The song contains both constructive and concerning elements, or the message depends heavily on interpretation.
+- Escapist: The song centers pleasure, partying, sex, luxury, intoxication, distraction, or release without much critique or constructive movement.
+- Concerning: The song centers or normalizes revenge, despair, toxic relationships, emotional chaos, objectification, destructive coping, harmful pride, or toxic dominance.
+
+Message orientation rules:
+- Do not classify a song as Encouraging just because it is vulnerable, confessional, therapy-framed, sad, or self-aware.
+- Therapy-style framing alone does not make a song Reflective or Encouraging.
+- Reflective songs should usually receive message_score = 0 unless they clearly move toward repair or growth.
+- Escapist songs can sound joyful but still have message_score = -1 or 0.
+- Concerning songs may still be clever, satirical, popular, or emotionally honest.
 
 message_score:
 - -2 = strongly concerning message
-- -1 = somewhat concerning, escapist, self-focused, or pleasure-centered message
-- 0 = ambiguous, mixed, descriptive, critical, reflective, or neutral message
+- -1 = somewhat concerning, escapist, unstable, self-focused, destructive, or unresolved message
+- 0 = mixed, descriptive, reflective, ambiguous, or neutral message
 - 1 = somewhat constructive or encouraging message
 - 2 = strongly constructive or encouraging message
 
 Message score alignment rules:
-- Constructive/Encouraging should usually be 1 or 2.
-- Ambiguous/Mixed should usually be 0.
-- Pleasure/Escapist should usually be -1 or 0.
-- Potentially Concerning should usually be -1 or -2.
-- Critical/Reflective should usually be 0 or 1.
-- If you deviate from these defaults, the rationale should make the reason clear.
+- Encouraging should usually be 1 or 2.
+- Reflective should usually be 0, unless the song clearly points toward repair, change, responsibility, or hope.
+- Mixed should usually be 0.
+- Escapist should usually be -1 or 0.
+- Concerning should usually be -1 or -2.
+- Use 2 only when the song clearly emphasizes repair, healthy commitment, responsibility, perseverance, or positive change.
+- Use 1 when the message is mostly constructive but not deeply developed.
+- Use 0 when the song is self-aware or reflective but does not clearly move toward growth.
+- Use -1 when the song emphasizes avoidance, instability, revenge, materialism, ego, emotional chaos, excess, or destructive coping.
+- Use -2 when the song strongly endorses harm, revenge, toxicity, despair, humiliation, or destructive behavior.
+- If you deviate from these defaults, the rationale must make the reason clear.
 
-Important distinction:
-- emotional_valence measures mood.
-- message_score measures the apparent value orientation or constructive/concerning nature of the message.
-- A song can be emotionally negative but constructively reflective.
-- A song can be emotionally positive but still carry a potentially concerning message.
-
-
-value_signal definion: Is measuring the main value, behavior, or worldview the song appears to normalize, celebrate, wrestle with, or point toward.
-value_signal:
-- Love/Commitment
-- Hope/Resilience
+Allowed values for value_signal:
+- Connection
+- Resilience
+- Growth
 - Self-Worth
-- Growth/Accountability
-- Joy/Celebration
-- Freedom/Escape
-- Status/Materialism
-- Desire/Pleasure
-- Revenge/Conflict
-- Numbness/Avoidance
-- Confusion/Instability
-- Survival/Struggle
+- Joy/Pleasure
+- Escape
+- Status
+- Ego/Power
+- Revenge
+- Avoidance
+- Instability
+- Survival
 - Other
 
-evidence_basis:
+Value signal definition:
+value_signal measures the main value, behavior, coping pattern, or worldview the song appears to normalize, celebrate, wrestle with, or point toward.
+
+Value signal definitions:
+- Connection: Love, commitment, loyalty, secure attachment, devotion, or meaningful relational bond.
+- Resilience: Endurance with hope, perseverance, strength through hardship, or continuing despite pain.
+- Growth: Accountability, maturity, repair, responsibility, changed behavior, or actual personal development.
+- Self-Worth: Grounded dignity, self-respect, boundaries, or healthy self-regard.
+- Joy/Pleasure: Fun, sensuality, enjoyment, desire, indulgence, celebration, or pleasure as a central value.
+- Escape: Release, distraction, partying, intoxication, freedom from pressure, or avoiding reality through pleasure.
+- Status: Money, luxury, fame, material success, popularity, social rank, image, or achievement as central value.
+- Ego/Power: Dominance, superiority, swagger, control, being untouchable, pride, forcefulness, or ego as central value.
+- Revenge: Retaliation, enemies, payback, dominance through conflict, resentment, or vindication.
+- Avoidance: Denial, numbness, emotional shutdown, refusing to confront pain, or keeping distance from vulnerability.
+- Instability: Chaos, contradiction, confusion, fractured identity, spiraling, unresolved dysfunction, or emotional volatility.
+- Survival: Enduring hardship, poverty, systemic pressure, dangerous conditions, or struggle as a way of life.
+- Other: Use only when none of the categories fit.
+
+Strict value signal rules:
+- Do not choose Growth unless the narrator clearly accepts responsibility, changes, repairs harm, matures, or moves toward healthier behavior.
+- Do not choose Resilience just because the narrator is suffering.
+- Do not choose Self-Worth for ego, flexing, dominance, revenge, status-seeking, or superiority.
+- Do not choose Connection for obsession, clinging, possession, toxicity, or inability to move on.
+- Do not choose Joy/Pleasure for destructive escape if avoidance is the deeper signal.
+- Choose Escape when the song treats partying, sex, intoxication, luxury, or fun mainly as release or distraction.
+- Choose Status when wealth, fame, luxury, public success, or image is the central value.
+- Choose Ego/Power when dominance, pride, superiority, swagger, or control is the central value.
+- For therapy-style or confessional songs, ask: does the song actually move toward healing, or does it mainly display chaos? If chaos, choose Instability or Avoidance.
+- For fame/wealth songs with depression, numbness, drugs, or chaos, consider Instability, Avoidance, Status, Escape, or Joy/Pleasure before Growth.
+- For diss tracks or rivalries, consider Revenge or Ego/Power before Self-Worth.
+
+Allowed values for evidence_basis:
 - Lyrics
 - Lyrics + Context
 - Context Only
@@ -170,14 +273,21 @@ Evidence basis definitions:
 - Context Only: Classification is based mainly on public descriptions, reviews, artist context, or widely known interpretation rather than direct lyric-level analysis.
 - Limited Evidence: Public information is limited, unclear, or conflicting, so the classification is uncertain.
 
-confidence_score:
+Allowed values for confidence_score:
+- 1
+- 2
+- 3
+- 4
+- 5
+
+Confidence score definitions:
 - 1 = very uncertain
 - 2 = uncertain
 - 3 = moderately confident
 - 4 = confident
 - 5 = very confident
 
-human_review_needed:
+Allowed values for human_review_needed:
 - Yes
 - No
 
@@ -185,7 +295,8 @@ Human review rules:
 - Use Yes if confidence_score is 1, 2, or 3.
 - Use Yes if evidence_basis is Limited Evidence.
 - Use Yes if evidence_basis is Context Only and the song meaning is ambiguous.
-- Use Yes if the song uses irony, metaphor, rivalry, slang, or unclear narrative perspective in a way that affects classification.
+- Use Yes if the song uses irony, satire, metaphor, rivalry, slang, persona, or unclear narrative perspective in a way that affects classification.
+- Use Yes if the song is therapy-framed, highly ironic, or self-contradictory.
 - Use No only when the classification is reasonably clear.
 
 Rationale rules:

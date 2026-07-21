@@ -1,7 +1,2 @@
-song_id,comparison_group,group_type,market_scope,year_end_rank,song_title,artist,chart_name,chart_year,tracking_period,source_url,song_key
-28,Country,Genre,United States,8,All the Way,BigXthaPlug featuring Bailey Zimmerman,Billboard Hot Country Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-country-songs/,all the way || bigxthaplug featuring bailey zimmerman
-6,Rap,Genre,United States,6,All the Way,BigXthaPlug featuring Bailey Zimmerman,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/,all the way || bigxthaplug featuring bailey zimmerman
-43,Global 200,Global benchmark,Global,3,Birds of a Feather,Billie Eilish,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/,birds of a feather || billie eilish
-31,Rock & Alternative,Genre,United States,1,Birds of a Feather,Billie Eilish,Billboard Hot Rock & Alternative Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rock-alternative-songs/,birds of a feather || billie eilish
-48,Global 200,Global benchmark,Global,8,Luther,Kendrick Lamar & SZA,Billboard Global 200,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/billboard-global-200/,luther || kendrick lamar & sza
-1,Rap,Genre,United States,1,Luther,Kendrick Lamar & SZA,Billboard Hot Rap Songs,2025,2024-10-26 to 2025-10-18,https://www.billboard.com/charts/year-end/2025/hot-rap-songs/,luther || kendrick lamar & sza
+unique_song_id,song_title,artist,appearances,comparison_groups,chart_ranks
+6,All the Way,BigXthaPlug featuring Bailey Zimmerman,2,Rap; Country,Rap: 6; Country: 8
